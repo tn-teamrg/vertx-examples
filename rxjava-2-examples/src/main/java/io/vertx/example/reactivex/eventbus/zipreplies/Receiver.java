@@ -3,6 +3,7 @@ package io.vertx.example.reactivex.eventbus.zipreplies;
 import io.vertx.example.util.Runner;
 import io.vertx.reactivex.core.AbstractVerticle;
 import io.vertx.reactivex.core.eventbus.EventBus;
+import java.security.SecureRandom;
 
 import java.util.Random;
 
@@ -20,7 +21,7 @@ public class Receiver extends AbstractVerticle {
   @Override
   public void start() throws Exception {
 
-    Random random1 = new Random();
+    Random random1 = new SecureRandom();
     EventBus eb = vertx.eventBus();
 
     eb.consumer("heatsensor1").
