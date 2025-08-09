@@ -9,6 +9,7 @@ import io.vertx.core.streams.WriteStream;
 import io.vertx.example.util.Runner;
 import io.vertx.grpc.client.GrpcClient;
 import io.vertx.grpc.common.GrpcReadStream;
+import java.security.SecureRandom;
 
 import java.util.List;
 import java.util.Random;
@@ -23,7 +24,7 @@ public class Client extends AbstractVerticle {
     Runner.runExample(Client.class);
   }
 
-  private Random random = new Random();
+  private Random random = new SecureRandom();
   private GrpcClient client;
 
   @Override

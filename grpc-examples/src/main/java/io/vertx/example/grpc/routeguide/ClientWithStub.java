@@ -14,6 +14,7 @@ import io.vertx.core.streams.WriteStream;
 import io.vertx.example.util.Runner;
 import io.vertx.grpc.client.GrpcClient;
 import io.vertx.grpc.client.GrpcClientChannel;
+import java.security.SecureRandom;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,7 +30,7 @@ public class ClientWithStub extends AbstractVerticle {
     Runner.runExample(ClientWithStub.class);
   }
 
-  private Random random = new Random();
+  private Random random = new SecureRandom();
   private VertxRouteGuideGrpc.RouteGuideVertxStub stub;
 
   @Override

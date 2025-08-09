@@ -10,6 +10,7 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.StaticHandler;
 import io.vertx.ext.web.handler.TemplateHandler;
 import io.vertx.ext.web.templ.handlebars.HandlebarsTemplateEngine;
+import java.security.SecureRandom;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -27,7 +28,7 @@ public class Http2ServerVerticle extends AbstractVerticle {
   private static final int ROWS = 15;
   private static final int TILE_HEIGHT = 38;
   private static final int TILE_WIDTH = 68;
-  private static final Random RANDOM = new Random();
+  private static final Random RANDOM = new SecureRandom();
 
   private HttpServer http1;
   private HttpServer http2;

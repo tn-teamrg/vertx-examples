@@ -3,6 +3,7 @@ package io.vertx.example.micrometer.verticles;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
+import java.security.SecureRandom;
 
 import java.util.Random;
 
@@ -16,7 +17,7 @@ public final class Greetings {
           "Hallo Welt!",
           "Hola Mundo!"
   };
-  private static final Random RND = new Random();
+  private static final Random RND = new SecureRandom();
 
   private Greetings() {
   }

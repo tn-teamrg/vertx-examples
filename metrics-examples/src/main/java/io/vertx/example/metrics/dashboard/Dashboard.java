@@ -26,6 +26,7 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.StaticHandler;
 import io.vertx.ext.web.handler.sockjs.SockJSBridgeOptions;
 import io.vertx.ext.web.handler.sockjs.SockJSHandler;
+import java.security.SecureRandom;
 
 import java.util.Random;
 
@@ -67,7 +68,7 @@ public class Dashboard extends AbstractVerticle {
     });
 
     // Send some messages
-    Random random = new Random();
+    Random random = new SecureRandom();
     vertx.eventBus().consumer("whatever", msg -> {
       vertx.setTimer(10 + random.nextInt(50), id -> {
         vertx.eventBus().send("whatever", "hello");
